@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Roadmap</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --section-bg: #252526;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .main-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: block;
+            margin: 0 auto 10px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic h3 {
+            color: #90caf9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic p {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .resources {
+            margin-top: 10px;
+        }
+
+        .resource {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resource:hover {
+            text-decoration: underline;
+        }
+
+        .expand-btn {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .expand-btn:hover {
+            background-color: #444444;
+        }
+
+        .resources {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .resources.expanded {
+            max-height: 500px;
+        }
+
+        /* Full Roadmap Link */
+        .full-roadmap-link {
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+
+        .full-roadmap-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .section {
+                padding: 15px;
+            }
+            .full-roadmap-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-header">
+            <a href="index.html" class="back-link">← Back to Main Menu</a>
+            <h1>Cyber Security Roadmap</h1>
+            <p class="subtitle">A detailed roadmap for cybersecurity</p>
+        </div>
+
+        <!-- Basic Section -->
+        <div class="section">
+            <h2>Basic Level</h2>
+            <div class="topic">
+                <h3>Computer Networks</h3>
+                <p>Understanding network concepts like TCP/IP, HTTP/HTTPS, DNS, SSL, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.youtube.com/playlist?list=PLXuWQ9AVf5nQXEVgJI1TQ6Yh2yWcA_4WY" class="resource" target="_blank">Networks Lectures (YouTube)</a>
+                    <a href="https://www.computernetworkingnotes.com/" class="resource" target="_blank">Computer Networking Notes</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Operating Systems</h3>
+                <p>Understanding OS concepts like process management, memory, file systems, security.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" class="resource" target="_blank">OSTEP Book</a>
+                    <a href="https://www.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O" class="resource" target="_blank">OS Lectures (YouTube)</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Basic Cryptography</h3>
+                <p>Introduction to encryption, digital signatures, concepts like AES, RSA, Hash Functions.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.khanacademy.org/computing/computer-science/cryptography" class="resource" target="_blank">Cryptography - Khan Academy</a>
+                    <a href="https://cryptobook.nakov.com/" class="resource" target="_blank">Practical Cryptography for Developers</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Git & GitHub</h3>
+                <p>Git is a version control system for tracking changes in source code. GitHub is a platform for hosting repositories and collaborating on projects.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://git-scm.com/doc" class="resource" target="_blank">Official Git Documentation</a>
+                    <a href="https://docs.github.com/en" class="resource" target="_blank">GitHub Docs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond Basic Section -->
+        <div class="section">
+            <h2>Beyond Basic</h2>
+            <div class="topic">
+                <h3>Web Application Security</h3>
+                <p>Understanding common web application attacks like XSS, CSRF, SQL Injection, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://owasp.org/www-project-top-ten/" class="resource" target="_blank">OWASP Top 10</a>
+                    <a href="https://portswigger.net/web-security" class="resource" target="_blank">Web Security Academy</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Network Security</h3>
+                <p>Techniques to protect networks like Firewalls, IDS/IPS, VPNs, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.cisco.com/c/en/us/products/security/what-is-network-security.html" class="resource" target="_blank">Cisco Network Security</a>
+                    <a href="https://www.sans.org/cyber-security-courses/network-security-fundamentals/" class="resource" target="_blank">SANS Network Security</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Vulnerability Assessment & Penetration Testing (VAPT)</h3>
+                <p>Techniques for testing security and identifying vulnerabilities.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.offensive-security.com/metasploit-unleashed/" class="resource" target="_blank">Metasploit Unleashed</a>
+                    <a href="https://tryhackme.com/" class="resource" target="_blank">TryHackMe</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Security Tools (Nmap, Wireshark, Burp Suite)</h3>
+                <p>Common tools for security testing and network analysis.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://nmap.org/book/toc.html" class="resource" target="_blank">Nmap Documentation</a>
+                    <a href="https://www.wireshark.org/docs/" class="resource" target="_blank">Wireshark Documentation</a>
+                    <a href="https://portswigger.net/burp/documentation" class="resource" target="_blank">Burp Suite Documentation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="section">
+            <h2>Advanced Level</h2>
+            <div class="topic">
+                <h3>Reverse Engineering</h3>
+                <p>Analyzing software to understand how it works.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.begin.re/" class="resource" target="_blank">Begin.RE</a>
+                    <a href="https://github.com/0xInfection/Awesome-Reversing" class="resource" target="_blank">Awesome Reversing Resources</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Malware Analysis</h3>
+                <p>Analyzing malicious software to understand its impact.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.malware-traffic-analysis.net/training.html" class="resource" target="_blank">Malware Traffic Analysis</a>
+                    <a href="https://www.packtpub.com/product/mastering-malware-analysis/9781788992221" class="resource" target="_blank">Mastering Malware Analysis</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Incident Response & Digital Forensics</h3>
+                <p>Procedures for responding to attacks and collecting digital evidence.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.sans.org/cyber-security-courses/incident-handlers-handbook/" class="resource" target="_blank">SANS Incident Handler's Handbook</a>
+                    <a href="https://dfir.org/" class="resource" target="_blank">DFIR Resources</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Security Compliance & Standards (ISO 27001, NIST)</h3>
+                <p>Standards and regulations for ensuring security in organizations.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.iso.org/isoiec-27001-information-security.html" class="resource" target="_blank">ISO 27001</a>
+                    <a href="https://www.nist.gov/cyberframework" class="resource" target="_blank">NIST Cybersecurity Framework</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Roadmap Link at the bottom -->
+    <a href="https://roadmap.sh/cyber-security" class="full-roadmap-link" target="_blank">Full Roadmap Version</a>
+
+    <script>
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const resources = button.nextElementSibling;
+                resources.classList.toggle('expanded');
+                button.textContent = resources.classList.contains('expanded') ? 'Hide Resources' : 'Show Resources';
+            });
+        });
+    </script>
+</body>
+</html>

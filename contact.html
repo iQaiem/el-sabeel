@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Developer Roadmaps</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --section-bg: #252526;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto; /* Push to the right */
+        }
+
+        .logo {
+            width: 130px; /* Same size as frontend */
+            height: 130px; /* Same size as frontend */
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        .contact-text {
+            flex: 1;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        .contact-text h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-item h3 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            
+            .logo-container {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-text">
+                <h1>Contact</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>ibrahim tarek</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/CommanderX0" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/iarchtesla/" target="_blank">LinkedIn</a>
+                        </div>
+                        <p>his name is ibrahim and this about him</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>ismail hamada</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/ih4525676-spec" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/iarchtesla/" target="_blank">LinkedIn</a>
+                        </div>
+                        <p>his name is ibrahim and this about him</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>islam hamdi</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/CommanderX0" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/iarchtesla/" target="_blank">LinkedIn</a>
+                        </div>
+                        <p>his name is ibrahim and this about him</p>
+                    </div>
+                <div class="contact-item">
+                        <h3>islam hamdi</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/CommanderX0" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/iarchtesla/" target="_blank">LinkedIn</a>
+                        </div>
+                        <p>his name is ibrahim and this about him</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>islam hamdi</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/CommanderX0" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/iarchtesla/" target="_blank">LinkedIn</a>
+                        </div>
+                        <p>his name is ibrahim and this about him</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-image">
+                <!-- Placeholder for an image if needed -->
+                <div style="width: 300px; height: 300px; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #aaaaaa;">Contact Image</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

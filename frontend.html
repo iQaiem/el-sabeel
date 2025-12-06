@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Roadmap</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --section-bg: #252526;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto; /* Push to the right */
+        }
+
+        .logo {
+            width: 130px; /* Increased size */
+            height: 130px; /* Increased size */
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .main-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: block;
+            margin: 0 auto 10px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic h3 {
+            color: #90caf9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic p {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .resources {
+            margin-top: 10px;
+        }
+
+        .resource {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resource:hover {
+            text-decoration: underline;
+        }
+
+        .expand-btn {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .expand-btn:hover {
+            background-color: #444444;
+        }
+
+        .resources {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .resources.expanded {
+            max-height: 500px; /* Adjust as needed */
+        }
+
+        /* Full Roadmap Link */
+        .full-roadmap-link {
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+
+        .full-roadmap-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            .full-roadmap-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-header">
+            <a href="index.html" class="back-link">← Back to Main Menu</a>
+            <h1>Frontend Developer Roadmap</h1>
+            <p class="subtitle">A detailed roadmap for frontend development</p>
+        </div>
+
+        <!-- Basic Section -->
+        <div class="section">
+            <h2>Basic Level</h2>
+            
+            <div class="topic">
+                <h3>HTML</h3>
+                <p>HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser. It defines the meaning and structure of web content.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="resource" target="_blank">MDN HTML Guide</a>
+                    <a href="https://www.w3schools.com/html/" class="resource" target="_blank">W3Schools HTML</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>CSS</h3>
+                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in HTML. It controls the layout, colors, fonts, and visual aspects.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="resource" target="_blank">MDN CSS Guide</a>
+                    <a href="https://www.w3schools.com/css/" class="resource" target="_blank">W3Schools CSS</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>JavaScript</h3>
+                <p>JavaScript is a programming language that enables interactive web pages. It allows you to implement complex features, manipulate DOM, handle events, and make HTTP requests.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="resource" target="_blank">MDN JavaScript Guide</a>
+                    <a href="https://www.w3schools.com/js/" class="resource" target="_blank">W3Schools JavaScript</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Git & GitHub</h3>
+                <p>Git is a version control system for tracking changes in source code. GitHub is a platform for hosting repositories and collaborating on projects.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://git-scm.com/doc" class="resource" target="_blank">Official Git Documentation</a>
+                    <a href="https://docs.github.com/en" class="resource" target="_blank">GitHub Docs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond Basic Section -->
+        <div class="section">
+            <h2>Beyond Basic</h2>
+            
+            <div class="topic">
+                <h3>Responsive Design</h3>
+                <p>Designing web pages that adapt to different screen sizes and devices. Involves using media queries, flexible grids, and scalable images.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" class="resource" target="_blank">MDN Responsive Design</a>
+                    <a href="https://www.w3schools.com/css/css_rwd_intro.asp" class="resource" target="_blank">W3Schools Responsive Design</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Preprocessors (Sass/SCSS)</h3>
+                <p>Tools that extend CSS with features like variables, mixins, and functions, making stylesheets more maintainable and scalable.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://sass-lang.com/guide" class="resource" target="_blank">Sass Official Guide</a>
+                    <a href="https://www.w3schools.com/sass/" class="resource" target="_blank">W3Schools Sass</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Build Tools (Webpack, Vite)</h3>
+                <p>Tools that optimize your project, bundle files, minify code, and transform modern JavaScript for browser compatibility.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://webpack.js.org/guides/" class="resource" target="_blank">Webpack Guides</a>
+                    <a href="https://vitejs.dev/guide/" class="resource" target="_blank">Vite Guide</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Testing (Jest, Cypress)</h3>
+                <p>Writing automated tests to ensure your code works as expected. Includes unit tests, integration tests, and end-to-end tests.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://jestjs.io/docs/getting-started" class="resource" target="_blank">Jest Documentation</a>
+                    <a href="https://docs.cypress.io/guides/getting-started/installing-cypress" class="resource" target="_blank">Cypress Guide</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="section">
+            <h2>Advanced Level</h2>
+            
+            <div class="topic">
+                <h3>Modern Frameworks (React, Vue, Angular)</h3>
+                <p>JavaScript frameworks for building dynamic, scalable web applications. They provide features like component architecture, state management, and routing.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://reactjs.org/docs/getting-started.html" class="resource" target="_blank">React Documentation</a>
+                    <a href="https://vuejs.org/guide/introduction.html" class="resource" target="_blank">Vue Guide</a>
+                    <a href="https://angular.io/start" class="resource" target="_blank">Angular Guide</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>State Management (Redux, Zustand)</h3>
+                <p>Patterns and tools for managing and updating application state in complex JavaScript applications, especially in React/Vue/Angular.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://redux.js.org/introduction/getting-started" class="resource" target="_blank">Redux Documentation</a>
+                    <a href="https://docs.pmnd.rs/zustand" class="resource" target="_blank">Zustand Guide</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Performance Optimization</h3>
+                <p>Techniques to improve loading speed and runtime performance, such as lazy loading, code splitting, image optimization, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://web.dev/fast/" class="resource" target="_blank">Web.dev Performance</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" class="resource" target="_blank">MDN Performance</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Web Security (CORS, XSS, etc.)</h3>
+                <p>Principles and techniques to protect your application from common web vulnerabilities and attacks.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Security" class="resource" target="_blank">MDN Web Security</a>
+                    <a href="https://owasp.org/www-project-top-ten/" class="resource" target="_blank">OWASP Top 10</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Roadmap Link at the bottom -->
+    <a href="https://roadmap.sh/frontend" class="full-roadmap-link" target="_blank">Full Roadmap Version</a>
+
+    <script>
+        // Toggle resource visibility
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const resources = button.nextElementSibling;
+                resources.classList.toggle('expanded');
+                
+                if (resources.classList.contains('expanded')) {
+                    button.textContent = 'Hide Resources';
+                } else {
+                    button.textContent = 'Show Resources';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

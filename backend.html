@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Developer Roadmap</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --section-bg: #252526;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .main-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: block;
+            margin: 0 auto 10px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic h3 {
+            color: #90caf9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic p {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .resources {
+            margin-top: 10px;
+        }
+
+        .resource {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resource:hover {
+            text-decoration: underline;
+        }
+
+        .expand-btn {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .expand-btn:hover {
+            background-color: #444444;
+        }
+
+        .resources {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .resources.expanded {
+            max-height: 500px;
+        }
+
+        /* Full Roadmap Link */
+        .full-roadmap-link {
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+
+        .full-roadmap-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .section {
+                padding: 15px;
+            }
+            .full-roadmap-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-header">
+            <a href="index.html" class="back-link">← Back to Main Menu</a>
+            <h1>Backend Developer Roadmap</h1>
+            <p class="subtitle">A detailed roadmap for backend development</p>
+        </div>
+
+        <!-- Basic Section -->
+        <div class="section">
+            <h2>Basic Level</h2>
+            <div class="topic">
+                <h3>Programming Language (Node.js, Python, Java, etc.)</h3>
+                <p>Choose a programming language for backend development such as Node.js (JavaScript), Python (Django/Flask), Java (Spring), PHP, Ruby, Go, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://nodejs.org/en/docs/" class="resource" target="_blank">Node.js Documentation</a>
+                    <a href="https://docs.python.org/" class="resource" target="_blank">Python Documentation</a>
+                    <a href="https://spring.io/projects/spring-framework" class="resource" target="_blank">Spring Framework</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>HTTP & REST APIs</h3>
+                <p>Understanding HTTP protocol concepts, GET/POST/PUT/DELETE requests, designing and building RESTful APIs.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" class="resource" target="_blank">MDN HTTP Guide</a>
+                    <a href="https://restfulapi.net/" class="resource" target="_blank">REST API Tutorial</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Git & GitHub</h3>
+                <p>Git is a version control system for tracking changes in source code. GitHub is a platform for hosting repositories and collaborating on projects.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://git-scm.com/doc" class="resource" target="_blank">Official Git Documentation</a>
+                    <a href="https://docs.github.com/en" class="resource" target="_blank">GitHub Docs</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Databases (SQL & NoSQL)</h3>
+                <p>Understanding database systems like SQL (MySQL, PostgreSQL) and NoSQL (MongoDB, Redis) and how to interact with them.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.mysql.com/" class="resource" target="_blank">MySQL Documentation</a>
+                    <a href="https://www.postgresql.org/docs/" class="resource" target="_blank">PostgreSQL Docs</a>
+                    <a href="https://www.mongodb.com/docs/" class="resource" target="_blank">MongoDB Docs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond Basic Section -->
+        <div class="section">
+            <h2>Beyond Basic</h2>
+            <div class="topic">
+                <h3>Authentication & Authorization</h3>
+                <p>Systems to protect resources and determine who can access which features, such as JWT, OAuth, Session-based Auth.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://auth0.com/docs" class="resource" target="_blank">Auth0 Documentation</a>
+                    <a href="https://jwt.io/introduction" class="resource" target="_blank">JWT Introduction</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Server Architecture (Monolith, Microservices)</h3>
+                <p>Understanding server architecture patterns like Monolith and Microservices and when to use each.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://microservices.io/" class="resource" target="_blank">Microservices Guide</a>
+                    <a href="https://martinfowler.com/articles/distributed-objects-microservices.html" class="resource" target="_blank">Martin Fowler on Microservices</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Message Queues (RabbitMQ, Kafka)</h3>
+                <p>Systems for transferring messages between services reliably, important in distributed systems.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.rabbitmq.com/documentation.html" class="resource" target="_blank">RabbitMQ Docs</a>
+                    <a href="https://kafka.apache.org/documentation/" class="resource" target="_blank">Apache Kafka Docs</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Caching (Redis, Memcached)</h3>
+                <p>Using caching techniques to improve application performance and reduce database load.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://redis.io/documentation" class="resource" target="_blank">Redis Documentation</a>
+                    <a href="https://memcached.org/documentation" class="resource" target="_blank">Memcached Docs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="section">
+            <h2>Advanced Level</h2>
+            <div class="topic">
+                <h3>DevOps & CI/CD</h3>
+                <p>Integrating software development with operations using tools like Docker, Kubernetes, Jenkins, GitHub Actions.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://docs.docker.com/" class="resource" target="_blank">Docker Documentation</a>
+                    <a href="https://kubernetes.io/docs/home/" class="resource" target="_blank">Kubernetes Docs</a>
+                    <a href="https://docs.github.com/en/actions" class="resource" target="_blank">GitHub Actions</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>System Design</h3>
+                <p>Principles of designing scalable, secure, distributed systems, including concepts, patterns, and techniques.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://github.com/donnemartin/system-design-primer" class="resource" target="_blank">System Design Primer</a>
+                    <a href="https://www.hiredintech.com/system-design" class="resource" target="_blank">HiredInTech System Design</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Security (OWASP, JWT, etc.)</h3>
+                <p>Principles and techniques to protect your application from common web vulnerabilities and attacks.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://owasp.org/www-project-top-ten/" class="resource" target="_blank">OWASP Top 10</a>
+                    <a href="https://cheatsheetseries.owasp.org/" class="resource" target="_blank">OWASP Cheatsheets</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Performance & Monitoring</h3>
+                <p>Techniques to improve server performance and monitor system health and metrics.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.elastic.co/observability" class="resource" target="_blank">Elastic Observability</a>
+                    <a href="https://prometheus.io/docs/introduction/overview/" class="resource" target="_blank">Prometheus Docs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Roadmap Link at the bottom -->
+    <a href="https://roadmap.sh/backend" class="full-roadmap-link" target="_blank">Full Roadmap Version</a>
+
+    <script>
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const resources = button.nextElementSibling;
+                resources.classList.toggle('expanded');
+                button.textContent = resources.classList.contains('expanded') ? 'Hide Resources' : 'Show Resources';
+            });
+        });
+    </script>
+</body>
+</html>

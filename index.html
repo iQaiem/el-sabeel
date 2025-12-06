@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Roadmaps</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .tracks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .track-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .track-card:hover {
+            background-color: var(--hover-bg);
+            transform: translateY(-5px);
+        }
+
+        .track-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .track-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .arrow {
+            font-size: 1.2rem;
+        }
+
+        /* Full Roadmap Link */
+        .full-roadmap-link {
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+
+        .full-roadmap-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .tracks-container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .full-roadmap-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Developer Roadmaps</h1>
+            <p class="subtitle">Community created roadmaps, guides and articles to help developers grow in their career.</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a track...">
+        </div>
+
+        <div class="tracks-container" id="tracksContainer">
+            <!-- Frontend Developer -->
+            <a href="frontend.html" class="track-card" data-track="frontend">
+                <span class="track-icon">🖥️</span>
+                <span class="track-name">Frontend Developer</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Backend Developer -->
+            <a href="backend.html" class="track-card" data-track="backend">
+                <span class="track-icon">⚙️</span>
+                <span class="track-name">Backend Developer</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Computer Science -->
+            <a href="cs.html" class="track-card" data-track="cs">
+                <span class="track-icon">🧠</span>
+                <span class="track-name">Computer Science</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- AI Engineer -->
+            <a href="ai.html" class="track-card" data-track="ai">
+                <span class="track-icon">🤖</span>
+                <span class="track-name">AI Engineer</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Machine Learning -->
+            <a href="ml.html" class="track-card" data-track="ml">
+                <span class="track-icon">📊</span>
+                <span class="track-name">Machine Learning</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Deep Learning -->
+            <a href="dl.html" class="track-card" data-track="dl">
+                <span class="track-icon">🧬</span>
+                <span class="track-name">Deep Learning</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Security -->
+            <a href="security.html" class="track-card" data-track="security">
+                <span class="track-icon">🛡️</span>
+                <span class="track-name">Cyber Security</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Data Science -->
+            <a href="ds.html" class="track-card" data-track="ds">
+                <span class="track-icon">📈</span>
+                <span class="track-name">Data Science</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Data Analysis -->
+            <a href="da.html" class="track-card" data-track="da">
+                <span class="track-icon">🔍</span>
+                <span class="track-name">Data Analysis</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Full Roadmap Link at the bottom -->
+    <a href="https://roadmap.sh/" class="full-roadmap-link" target="_blank">Full Roadmap Version</a>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const trackCards = document.querySelectorAll('.track-card');
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            trackCards.forEach(card => {
+                const trackName = card.querySelector('.track-name').textContent.toLowerCase();
+                const trackData = card.getAttribute('data-track');
+                card.style.display = (trackName.includes(searchTerm) || trackData.includes(searchTerm)) ? 'flex' : 'none';
+            });
+        });
+
+        trackCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('a')) return;
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => card.style.transform = '', 150);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Roadmap</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --section-bg: #252526;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .main-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: block;
+            margin: 0 auto 10px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic h3 {
+            color: #90caf9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic p {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .resources {
+            margin-top: 10px;
+        }
+
+        .resource {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resource:hover {
+            text-decoration: underline;
+        }
+
+        .expand-btn {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .expand-btn:hover {
+            background-color: #444444;
+        }
+
+        .resources {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .resources.expanded {
+            max-height: 500px;
+        }
+
+        /* Full Roadmap Link */
+        .full-roadmap-link {
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+
+        .full-roadmap-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .section {
+                padding: 15px;
+            }
+            .full-roadmap-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-header">
+            <a href="index.html" class="back-link">← Back to Main Menu</a>
+            <h1>Computer Science Roadmap</h1>
+            <p class="subtitle">A detailed roadmap for computer science</p>
+        </div>
+
+        <!-- Basic Section -->
+        <div class="section">
+            <h2>Basic Level</h2>
+            <div class="topic">
+                <h3>Programming Fundamentals</h3>
+                <p>Basic programming concepts like variables, loops, conditionals, functions, arrays, objects, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://cs50.harvard.edu/" class="resource" target="_blank">CS50 Harvard Course</a>
+                    <a href="https://www.khanacademy.org/computing/computer-programming" class="resource" target="_blank">Khan Academy Programming</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Data Structures</h3>
+                <p>Fundamental data organization structures like arrays, linked lists, stacks, queues, trees, hash tables, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.geeksforgeeks.org/data-structures/" class="resource" target="_blank">GeeksforGeeks Data Structures</a>
+                    <a href="https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/" class="resource" target="_blank">OpenDSA Data Structures</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Algorithms</h3>
+                <p>Search, sort, dynamic programming, graph algorithms, geometry, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.geeksforgeeks.org/fundamentals-of-algorithms/" class="resource" target="_blank">GeeksforGeeks Algorithms</a>
+                    <a href="https://algs4.cs.princeton.edu/home/" class="resource" target="_blank">Algorithms by Princeton</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Git & GitHub</h3>
+                <p>Git is a version control system for tracking changes in source code. GitHub is a platform for hosting repositories and collaborating on projects.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://git-scm.com/doc" class="resource" target="_blank">Official Git Documentation</a>
+                    <a href="https://docs.github.com/en" class="resource" target="_blank">GitHub Docs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond Basic Section -->
+        <div class="section">
+            <h2>Beyond Basic</h2>
+            <div class="topic">
+                <h3>Object-Oriented Programming (OOP)</h3>
+                <p>Programming using objects and classes, including concepts like inheritance, encapsulation, polymorphism.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/" class="resource" target="_blank">OOP Concepts</a>
+                    <a href="https://refactoring.guru/design-patterns" class="resource" target="_blank">Design Patterns</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Database Systems</h3>
+                <p>Understanding database design, building, and querying, SQL and NoSQL systems.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.w3schools.com/sql/" class="resource" target="_blank">SQL Tutorial</a>
+                    <a href="https://www.mongodb.com/docs/" class="resource" target="_blank">MongoDB Documentation</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Operating Systems</h3>
+                <p>Understanding OS concepts like process management, memory, file systems, security.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" class="resource" target="_blank">OSTEP Book</a>
+                    <a href="https://www.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O" class="resource" target="_blank">OS Lectures (YouTube)</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Computer Networks</h3>
+                <p>Understanding network concepts like TCP/IP, HTTP/HTTPS, DNS, SSL, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.youtube.com/playlist?list=PLXuWQ9AVf5nQXEVgJI1TQ6Yh2yWcA_4WY" class="resource" target="_blank">Networks Lectures (YouTube)</a>
+                    <a href="https://www.computernetworkingnotes.com/" class="resource" target="_blank">Computer Networking Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="section">
+            <h2>Advanced Level</h2>
+            <div class="topic">
+                <h3>System Design</h3>
+                <p>Principles of designing scalable, secure, distributed systems, including concepts, patterns, and techniques.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://github.com/donnemartin/system-design-primer" class="resource" target="_blank">System Design Primer</a>
+                    <a href="https://www.hiredintech.com/system-design" class="resource" target="_blank">HiredInTech System Design</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Compilers</h3>
+                <p>Understanding compiler design and construction concepts, parsing, translation.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://craftinginterpreters.com/" class="resource" target="_blank">Crafting Interpreters</a>
+                    <a href="https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/" class="resource" target="_blank">Stanford CS143</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Artificial Intelligence</h3>
+                <p>Introduction to AI, machine learning, neural networks, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.coursera.org/learn/machine-learning" class="resource" target="_blank">ML Course by Andrew Ng</a>
+                    <a href="https://ai.stanford.edu/" class="resource" target="_blank">Stanford AI</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Security</h3>
+                <p>Basics of cybersecurity, encryption, attacks, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.coursera.org/specializations/cyber-security" class="resource" target="_blank">Cyber Security Specialization</a>
+                    <a href="https://owasp.org/www-project-top-ten/" class="resource" target="_blank">OWASP Security</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Roadmap Link at the bottom -->
+    <a href="https://roadmap.sh/computer-science" class="full-roadmap-link" target="_blank">Full Roadmap Version</a>
+
+    <script>
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const resources = button.nextElementSibling;
+                resources.classList.toggle('expanded');
+                button.textContent = resources.classList.contains('expanded') ? 'Hide Resources' : 'Show Resources';
+            });
+        });
+    </script>
+</body>
+</html>

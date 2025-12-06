@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Roadmap</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #bb86fc;
+            --border-color: #333333;
+            --hover-bg: #2d2d2d;
+            --section-bg: #252526;
+            --link-color: #64b5f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            background-image: url('https://al-sabeel.net/wp-content/uploads/2020/12/b1-1.png.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid #4DB6AC;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .main-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: block;
+            margin: 0 auto 10px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic h3 {
+            color: #90caf9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic p {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .resources {
+            margin-top: 10px;
+        }
+
+        .resource {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resource:hover {
+            text-decoration: underline;
+        }
+
+        .expand-btn {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .expand-btn:hover {
+            background-color: #444444;
+        }
+
+        .resources {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .resources.expanded {
+            max-height: 500px;
+        }
+
+        /* Full Roadmap Link */
+        .full-roadmap-link {
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+
+        .full-roadmap-link:hover {
+            background-color: var(--hover-bg);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .section {
+                padding: 15px;
+            }
+            .full-roadmap-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-header">
+            <a href="index.html" class="back-link">← Back to Main Menu</a>
+            <h1>Data Analysis Roadmap</h1>
+            <p class="subtitle">A detailed roadmap for data analysis</p>
+        </div>
+
+        <!-- Basic Section -->
+        <div class="section">
+            <h2>Basic Level</h2>
+            <div class="topic">
+                <h3>Statistics Fundamentals</h3>
+                <p>Basic statistical concepts like mean, median, mode, variance, correlation, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.khanacademy.org/math/statistics-probability" class="resource" target="_blank">Statistics & Probability</a>
+                    <a href="https://statisticsbyjim.com/basics/descriptive-statistics/" class="resource" target="_blank">Descriptive Statistics</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Programming (Python/R)</h3>
+                <p>Python with libraries like Pandas, NumPy, Matplotlib or R for data analysis.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.python.org/about/gettingstarted/" class="resource" target="_blank">Python Getting Started</a>
+                    <a href="https://www.r-project.org/about.html" class="resource" target="_blank">R Project</a>
+                    <a href="https://pandas.pydata.org/docs/user_guide/10min.html" class="resource" target="_blank">Pandas 10 Minutes Guide</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Data Manipulation</h3>
+                <p>Skills for cleaning, transforming, and organizing data using libraries like Pandas.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://pandas.pydata.org/docs/user_guide/10min.html" class="resource" target="_blank">Pandas 10 Minutes Guide</a>
+                    <a href="https://pandas.pydata.org/docs/user_guide/missing_data.html" class="resource" target="_blank">Pandas Missing Data</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Git & GitHub</h3>
+                <p>Git is a version control system for tracking changes in source code. GitHub is a platform for hosting repositories and collaborating on projects.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://git-scm.com/doc" class="resource" target="_blank">Official Git Documentation</a>
+                    <a href="https://docs.github.com/en" class="resource" target="_blank">GitHub Docs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond Basic Section -->
+        <div class="section">
+            <h2>Beyond Basic</h2>
+            <div class="topic">
+                <h3>Data Visualization</h3>
+                <p>Creating effective visualizations using libraries like Matplotlib, Seaborn, ggplot2, etc.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://matplotlib.org/stable/tutorials/index.html" class="resource" target="_blank">Matplotlib Tutorials</a>
+                    <a href="https://seaborn.pydata.org/tutorial.html" class="resource" target="_blank">Seaborn Tutorial</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>SQL for Data Analysis</h3>
+                <p>Querying and manipulating data stored in relational databases.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.w3schools.com/sql/" class="resource" target="_blank">SQL Tutorial</a>
+                    <a href="https://mode.com/sql-tutorial/" class="resource" target="_blank">Mode SQL Tutorial</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Hypothesis Testing</h3>
+                <p>Statistical methods for testing hypotheses and making data-driven decisions.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing" class="resource" target="_blank">Hypothesis Testing</a>
+                    <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap" class="resource" target="_blank">AP Statistics</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Excel for Data Analysis</h3>
+                <p>Using Excel for data cleaning, analysis, and basic reporting.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://support.microsoft.com/en-us/excel" class="resource" target="_blank">Excel Support</a>
+                    <a href="https://www.excel-easy.com/" class="resource" target="_blank">Excel Easy</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="section">
+            <h2>Advanced Level</h2>
+            <div class="topic">
+                <h3>Machine Learning for Analysis</h3>
+                <p>Applying ML techniques for predictive analysis and pattern recognition.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.coursera.org/learn/machine-learning" class="resource" target="_blank">ML Course by Andrew Ng</a>
+                    <a href="https://scikit-learn.org/stable/getting_started.html" class="resource" target="_blank">Scikit-learn Guide</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Business Intelligence Tools</h3>
+                <p>Using tools like Tableau, Power BI for data visualization and reporting.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.tableau.com/learn" class="resource" target="_blank">Tableau Learning</a>
+                    <a href="https://docs.microsoft.com/en-us/power-bi/" class="resource" target="_blank">Power BI Documentation</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Statistical Software (SPSS, SAS)</h3>
+                <p>Using specialized statistical software for complex analysis.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.ibm.com/products/spss-statistics" class="resource" target="_blank">SPSS</a>
+                    <a href="https://www.sas.com/en_us/software/stat.html" class="resource" target="_blank">SAS</a>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Data Storytelling</h3>
+                <p>Effectively communicating insights and findings to stakeholders.</p>
+                <button class="expand-btn">Show Resources</button>
+                <div class="resources">
+                    <a href="https://www.storytellingwithdata.com/" class="resource" target="_blank">Storytelling with Data</a>
+                    <a href="https://www.data-to-viz.com/" class="resource" target="_blank">Data to Viz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Roadmap Link at the bottom -->
+    <a href="https://roadmap.sh/data-analyst" class="full-roadmap-link" target="_blank">Full Roadmap Version</a>
+
+    <script>
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const resources = button.nextElementSibling;
+                resources.classList.toggle('expanded');
+                button.textContent = resources.classList.contains('expanded') ? 'Hide Resources' : 'Show Resources';
+            });
+        });
+    </script>
+</body>
+</html>
